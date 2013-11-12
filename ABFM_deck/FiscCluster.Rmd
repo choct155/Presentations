@@ -51,7 +51,7 @@ This study seeks to extend this approach by incorporating spatial and temporal d
 
 ---
 
-![DC Mean AGI](/home/choct155/dissertation/TEL/ipynb/iit2011_by_census_block_map_scaled.png)
+![DC Mean AGI](/home/choct155/dissertation/Presentations/ABFM_deck/iit2011_by_census_block_map_scaled.png)
 
 ---
 
@@ -72,7 +72,7 @@ Yes, the interactions create modeling difficulties, but they also happen to prov
 
 Local governments reserve the right to waive the requirements of both TABOR and the SLPTR.  Over the 1993-2011 period, 48 counties chose to exempt themselves from one or both restrictions.  This has provided *cross-sectional variation*.
 
-![TEL Intensity](/home/choct155/dissertation/TEL/ipynb/TEL_intensity_2009.png)
+![TEL Intensity](/home/choct155/dissertation/Presentations/ABFM_deck/TEL_intensity_2009.png)
 
 ---
 
@@ -94,17 +94,17 @@ $$G_i(d)=\frac{\sum_j w_{i,j} (d) y_j - W_i \bar y(i)}{s(i)\{[(n-1) S_{1i} - W_i
 
 --- 
 
-![Moran](/home/choct155/dissertation/TEL/ipynb/moranIPlot.png)
+![Moran](/home/choct155/dissertation/Presentations/ABFM_deck/moranIPlot.png)
 
 ---
 
-![Getis and Ord](/home/choct155/dissertation/TEL/ipynb/goGPlot.png)
+![Getis and Ord](/home/choct155/dissertation/Presentations/ABFM_deck/goGPlot.png)
 
 ---
 
 ## Clustering Dynamic Evolves Over Time
 
-![Cluster Kernel G_i](/home/choct155/dissertation/TEL/ipynb/cluster_var_by_w_kern_g.png)
+![Cluster Kernel G_i](/home/choct155/dissertation/Presentations/ABFM_deck/cluster_var_by_w_kern_g.png)
 
 + Variation is substantially higher in $G_i$, which indicates relative consistency in clustering activity, with larger variation in the magnitude of clustering values. This could mean simultaneous revenue capacity transitions occur in multiple counties within given neighborhoods.
 
@@ -167,7 +167,7 @@ In general, the variation explained was fairly limited, but TEL intensity reject
 
 ---
 
-![TEL Impact on Per Capita Revenue](/home/choct155/dissertation/TEL/ipynb/TEL_pcrev_impact_scaled.png)
+![TEL Impact on Per Capita Revenue](/home/choct155/dissertation/Presentations/ABFM_deck/TEL_pcrev_impact_scaled.png)
 
 ---
 
@@ -185,8 +185,9 @@ $y = f($TEL Intensity, Property Classification Ratio, Demand for Housing, Demand
 
 ---
 
+##
 
-![TEL Intensity Impact](/home/choct155/dissertation/TEL/ipynb/ABFM_deck/ols_cap_est_scale.png)
+![TEL Intensity Impact](/home/choct155/dissertation/TEL/Presentations/ABFM_deck/ols_cap_est_scale.png)
 
 ---
 
