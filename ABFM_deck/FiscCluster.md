@@ -185,11 +185,6 @@ $y = f($TEL Intensity, Property Classification Ratio, Demand for Housing, Demand
 
 ---
 
-##
-
-![TEL Intensity Impact](/home/choct155/dissertation/TEL/Presentations/ABFM_deck/ols_cap_est_scale.png)
-
----
 
 ## Next Steps
 
