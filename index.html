@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Presentations by choct155</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Presentations</h1>
+        <p>Test Page - Sharing a Little TEL Related Analysis</p>
+
+        <p class="view"><a href="https://github.com/choct155/Presentations">View the Project on GitHub <small>choct155/Presentations</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/choct155/Presentations/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/choct155/Presentations/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/choct155/Presentations">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="spatial-implications-of-tax-and-expenditure-limitations-tels" class="anchor" href="#spatial-implications-of-tax-and-expenditure-limitations-tels"><span class="octicon octicon-link"></span></a>Spatial Implications of Tax and Expenditure Limitations (TELs)</h1>
+
+<p>This site is a test bed that serves the dual-purpose of sharing recent work on the TEL structure in Colorado and the usefulness of this delivery platform.  Use Github Pages at the current time is partially motivated by my not being entirely sure how to share <a href="http://slidify.org/">slidify</a> presentations with the linked images embedded.  (Typically the images are sourced from the hard drive on my computer via link references in the presentation code.  There is a way around this, I just have not yet discovered it.) For this reason, while most of the content can be accessed via the <a href="https://rawgithub.com/choct155/Presentations/master/ABFM_deck/FiscCluster.html">presentation </a> prepared for <a href="http://abfm.org/">ABFM</a>/<a href="http://www.appam.org/">APPAM</a>, images will be embedded into this page directly.</p>
+
+<p>Note that all of the visualization and the analysis behind it has leaned heavily on the <a href="http://pythonhosted.org/PySAL/">PySAL</a> (Python), <a href="http://www.jstatsoft.org/v47/i01/paper">splm</a> (R), and ggplot2 (R) packages (among others).  PySAL captured the lion's share of spatial manipulation and analysis, while the second provided modeling capability (Spatial Panel) not available in PySAL.  <a href="http://ggplot2.org/">ggplot2</a> was the primary visualization interface.  <a href="http://pandas.pydata.org/">pandas</a> was also critical, but that's a given.</p>
+
+<p>The images below will follow order of appearance in the presentation.  Note that if the images are too small, one can zoom in and out with CTRL and +/-.</p>
+
+<h2>
+<a name="presentation-images" class="anchor" href="#presentation-images"><span class="octicon octicon-link"></span></a>Presentation Images</h2>
+
+<h3>
+<a name="impact-of-de-brucing" class="anchor" href="#impact-of-de-brucing"><span class="octicon octicon-link"></span></a>Impact of De-Brucing</h3>
+
+<p>Over the 1993-2009 time period, 48 counties engaged in some form of <a href="http://en.wikipedia.org/wiki/Douglas_Bruce">De-Brucing</a>.  In the context of this analysis, De-Brucing modifies the rough TEL score generated for the Association for Budgeting and Financial Management conference.  This score added one point for each layer of legislation.  For example, in 1990, all counties scored two as a consequence of the application of both the Statewide Limit on Property Tax Revenue and the <a href="http://en.wikipedia.org/wiki/Gallagher_Amendment">Gallagher Amendment</a>.  With the advent of <a href="http://en.wikipedia.org/wiki/Taxpayer_Bill_of_Rights">TABOR</a> and <a href="http://www.colorado.gov/cs/Satellite?c=Page&amp;cid=1245071815137&amp;pagename=CGA-LegislativeCouncil%2FCLCLayout">Amendment 23</a>, the scores jumped one point each.  De-Brucing enters as a reduction in this score (one point for waiving TABOR and two points for waiving both TABOR and the Statewide Limit on PTR.  While a new intensity metric has been devised to provide finer measurement of county specific circumstances, this map still provides a useful view of the resultant cross-sectional variation in any given year.</p>
+
+<p><img src="https://raw.github.com/choct155/Presentations/master/ABFM_deck/TEL_intensity_2009.png" alt="TEL Instensity"></p>
+
+<h3>
+<a name="spatio-temporal-exploration-of-revenue-yield-clustering" class="anchor" href="#spatio-temporal-exploration-of-revenue-yield-clustering"><span class="octicon octicon-link"></span></a>Spatio-Temporal Exploration of Revenue Yield Clustering</h3>
+
+<p>Before one can perform panel analysis on clustering activity, it's likely good practice to check for temporal and cross-sectional variation.  Attempting to capture policy impacts without sufficient variation is ... challenging.  In any event, one method of exploring this phenomenon is through visual inspection of spatio-temporal plots.  The plots below show the evolution of fiscal clustering via two Local Indicators of Spatial Autocorrelation (LISAs): <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=4&amp;ved=0CEsQFjAD&amp;url=http%3A%2F%2Fwww.dces.wisc.edu%2Fdocuments%2Farticles%2Fcurtis%2Fcesoc977%2FAnselin1995.pdf&amp;ei=-ZKCUv2nFtKy4AP0_4C4Bw&amp;usg=AFQjCNGZ5P4H4IYmMnnB4-Brk5hqfpzV8A&amp;sig2=5nkQvUd6GbiSJzT8kCYojQ&amp;bvm=bv.56146854,d.dmg">Getis and Ord's G*(i) and Local Moran's I(i)</a>.  The plots proceed in five year increments from top to bottom, and are faceted by weight matrix type from left to right.  </p>
+
+<p>The varying intensity of colors indicates variation in the magnitude of clustering.  For G*(i), blue indicates clustering of high values and red indicates clustering of low values.  For I(i), blue indicates clustering of similar values and red indicates clustering of dissimilar values.</p>
+
+<p>The five chosen weight matrix configurations are as follows:</p>
+
+<ol>
+<li>Rook Contiguity</li>
+<li>Queen Contiguity</li>
+<li>Distance Band - Binary</li>
+<li>Distance Band - Continuous</li>
+<li>Kernel Decay (Gaussian)</li>
+</ol><p>In this context, fiscal clustering is measuring clustering in per capita revenue.</p>
+
+<p><img src="https://raw.github.com/choct155/Presentations/master/ABFM_deck/goGPlot.png" alt="Getis &amp; Ord's G"><img src="https://raw.github.com/choct155/Presentations/master/ABFM_deck/moranIPlot.png" alt="Local Moran's I"></p>
+
+<p>Here are two more plots capturing clustering in annual payroll per capita.</p>
+
+<p><img src="https://raw.github.com/choct155/Presentations/master/ABFM_deck/GO_plot_ap.png" alt="Getis &amp; Ord's G - AP"><img src="https://raw.github.com/choct155/Presentations/master/ABFM_deck/Mi_plot_ap.png" alt="Local Moran's I - AP"></p>
+
+<h3>
+<a name="another-view-of-clustering-variation" class="anchor" href="#another-view-of-clustering-variation"><span class="octicon octicon-link"></span></a>Another View of Clustering Variation</h3>
+
+<p>Stepping back from the spatial component, we can evaluate the distribution of clustering values.  The plot below captures the distribution of values in five year increments.  There is one plot for each weight matrix type within each LISA.  The first five are for I(i), while the second five are for G*(i).</p>
+
+<p><img src="https://raw.github.com/choct155/Presentations/master/ABFM_deck/cluster_var_by_w.png" alt="Clustering by W"></p>
+
+<h3>
+<a name="visualizing-tel-intensity-impact-on-per-capita-revenue" class="anchor" href="#visualizing-tel-intensity-impact-on-per-capita-revenue"><span class="octicon octicon-link"></span></a>Visualizing TEL Intensity Impact on Per Capita Revenue</h3>
+
+<p>A number of models exploring the impact of TEL Intensity on revenue yield:</p>
+
+<ul>
+<li>Pooled OLS</li>
+<li>Repeated Spatial Error Models</li>
+<li>Repeated Spatial Lag Models</li>
+<li>Spatial Panel</li>
+</ul><p>The following plot depicts TEL Intensity coefficient estimates from Spatial Lag Models run for each year (1993-2009).  The bars are colored by p-value.  The inflection point corresponds to alpha of 0.1.  Consequently, white is 90% confidence, blue is lower confidence, and red is higher confidence.  The more red a bar is, the cleaner the statistical signal.</p>
+
+<p><img src="https://raw.github.com/choct155/Presentations/master/ABFM_deck/TEL_pcrev_impact.png" alt="Intensity Impact Over Time"></p>
+
+<p>***Note that the last two plots in the presentation are interactive.  There is a standing issue with embedding <a href="http://rcharts.io/">rCharts</a> into slidify presentations at this time that causes the legend overlap that can be seen there.  The dark blue dot corresponds to the Spatial Lag estimates for the payroll model, while light blue corresponds to the estimates for the revenue model.  Either of them can be turned off by clicking on the corresponding dot in the legend.</p>
+
+<h2>
+<a name="update" class="anchor" href="#update"><span class="octicon octicon-link"></span></a>UPDATE</h2>
+
+<p>The plots from here on out were exploratory and not fixed up for presentation at either ABFM or APPAM.</p>
+
+<p>As alluded to in the presentation, the modeling approach for TEL intensity has shifted.  Instead of scoring by legislation, the impact is now split into two components:</p>
+
+<ol>
+<li><em>Distance Between Potential Revenue and Allowable Revenue</em></li>
+</ol><blockquote>
+<p>Both the Taxpayer Bill of Rights (TABOR) and the Statewide Limit on Property Tax Revenue (SLPTR) restrict growth in property tax revenue.  The former sets the limit at inflation plus new construction for general purpose jurisdictions, while the latter is fixed at 5.5%.  The practical effect is that in some years SLPTR is the more active constraint (because it's lower) and in other years TABOR is the more active constraint.  Thus, the limit is a composite construct.</p>
+
+<p>Furthermore, there are flow and stock components to the constraint.  The flow measure is the within year difference between the assessment growth in a county and the growth permitted by the composite limit.  The stock is the cumulative effect over multiple years, moderated by years in which revenue growth does not breach the growth ceiling imposed by TABOR and SLPTR.  The following chart shows the behavior of these flow (top panel) and stock (bottom panel) measurements for Adams County.</p>
+</blockquote>
+
+<p><img src="https://raw.github.com/choct155/Presentations/master/ABFM_deck/intensity_stock_Adams.png" alt="New TEL Intensity - Adams"></p>
+
+<ol>
+<li><em>Property Classification Ratio</em></li>
+</ol><blockquote>
+<p>As a consequence of the Gallagher Amendment, assessment ratios are set based upon the statewide ratio of residential to non-residential assessment volume.  This measure was intended to protect residential taxpayers from higher levies, but statewide application of this rule neglects dramatic differences in the composition of property in individual counties.  The ratio measure explores the impact of this effect.</p>
+</blockquote>
+
+<p>These two measures replaced the old score in new specifications, and were accompanied by additional covariates.  In an exploratory pooled OLS run, both were among the most substantive drivers of variation in annual payroll per capita and per capita revenue.  The following plot compares the coefficients in models featuring payroll (ols_econ) and revenue (ols_rev) as dependents.  Again, the bars are colored by p-value.</p>
+
+<p><img src="https://raw.github.com/choct155/Presentations/master/ABFM_deck/ols_cap_est_scale.png" alt="Parameter Estimates by Model"></p>
+
+<p>Spatial Lag Models were also run for this specification.  The following plot depicts the variance in parameter estimates over time for TEL intensity stock.  Each panel is overlaid with the statewide unemployment rate.</p>
+
+<p><img src="https://raw.github.com/choct155/Presentations/master/ABFM_deck/slm_intensity_est.png" alt="Intensity Stock - SLM"></p>
+
+<p>This is an analogous plot for the property ratio measure.</p>
+
+<p><img src="https://raw.github.com/choct155/Presentations/master/ABFM_deck/slm_gallagher_est.png" alt="Property Ratio - SLM"></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/choct155">choct155</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
