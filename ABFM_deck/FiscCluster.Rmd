@@ -1,0 +1,247 @@
+---
+title       : Spatial Implications of Tax and Expenditure Limitations
+subtitle    : TABOR is Just One Piece...
+author      : Marvin Ward Jr.
+job         : Fiscal Analyst, DC Office of Revenue Analysis
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
+ext_widgets : {rCharts: ["libraries/highcharts", "libraries/nvd3", "libraries/morris"]}
+mode        : selfcontained # {standalone, draft}
+
+---
+
+## Plan of Attack
+
++ Why study the local impact of TELs?
++ Does TABOR capture TEL structure in Colorado?
++ How can we explore spatial clustering?
++ How can we explore the impact of TEL intensity?
++ What have we learned?
++ What are the next steps?
+
+--- .class #id 
+
+## General Mechanism
+
+1. TELs impose artificial barriers in the fiscal matching process
+2. Revenue growth that lags expenditure need decreases the achievable investment in human and physical capital
+3. Lower capital investment diminishes the attractiveness of a jurisdiction for businesses and, in turn, residents
+
+To the extent that recessions facilitate 'ratcheting', the dynamic impact of recessionary years in non-trivial.  
+
+Can TELs impact broad trends in fiscal and economic capacity?
+
+---
+
+
+## TEL Literature Landscape
+
+Most of the empirical work attempts to study TELs across states, and as such, focuses on statewide definitions of TELs. Obviously this covers up local variation, but perhaps more interestingly, this choice in geographic scope encourages certain types of questions. 
+
++ What is the impact of TELs on revenue volatility ([St. Clair 2012](http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2151690))? 
++ Do TELs constrain property taxes ([Dye & McGuire 1997](http://www.sciencedirect.com/science/article/pii/S0047272797000479))? 
++ Do TELs constrain growth in employment and wages ([Poterba & Rueben 1995](http://www.jstor.org/discover/10.2307/2117953?uid=3739256&uid=2&uid=4&sid=21102688756161))?
++ Does the impact of TELs on property revenue change during recessions (Mullins & Mikesell 2013)?
+
+Evaluating the impact of TELs with a local lens begs the question, *are some jurisdictions affected differently than others*? While St. Clair did utilize local government data, the purpose was to show a general effect.  [Mullins (2004)](http://onlinelibrary.wiley.com/doi/10.1111/j.0275-1100.2004.00350.x/abstract?deniedAccessCustomisedMessage=&userIsAuthenticated=false), by contrast, is an important example of evaluating the *differential* impact of TELs as a function of socioeconomic starting conditions.
+
+This study seeks to extend this approach by incorporating spatial and temporal dependency.
+
+---
+
+![DC Mean AGI](/home/choct155/dissertation/TEL/ipynb/iit2011_by_census_block_map_scaled.png)
+
+---
+
+## TABOR *And Company*
+
+While the Taxpayer's Bill of Rights (TABOR) gets the lion's share of attention in Colorado, it is but one component of a set of four overlapping policies.  In order of enactment:
+
+1. **General Statewide Limit on Property Tax Revenue (SLPTR):**  Local property tax revenues may not increase by more than 5.5% in a given year (the limit was 7% before 1988)
+2. **Gallagher Amendment (GA):** Assessment rates for residential property are set statewide, calculated to keep historical ratios of residential and non-residential property tax revenue consistent (with some minor space for modification)
+3. **Taxpayer Bill of Rights (TABOR):** Limits annual growth in revenues to inflation plus a measure of growth (new construction for local governments and enrollment for school districts)
+4. **Amendment 23 (A23):** Mandates minimum increases in school funding and removes a portion of revenue from the TABOR base
+
+Yes, the interactions create modeling difficulties, but they also happen to provide *temporal variation* in the restrictiveness of the TEL structure.
+
+---
+
+## And De-Brucing is ...?
+
+Local governments reserve the right to waive the requirements of both TABOR and the SLPTR.  Over the 1993-2011 period, 48 counties chose to exempt themselves from one or both restrictions.  This has provided *cross-sectional variation*.
+
+![TEL Intensity](/home/choct155/dissertation/TEL/ipynb/TEL_intensity_2009.png)
+
+---
+
+## Local Indicators of Spatial Autocorrelation
+
+Spatial clustering is an indication of shared economic bases and fiscal linkages (both active cooperation and spillovers).  Revenue per capita can serve as a fiscal capacity indicator used to evaluate the extent of said fiscal linkages.
+
+### Local Moran's $I_i$
+
+<div>
+$$I_i=\frac{\sum_j z_i w_{i,j} z_j}{\sum_i z_i^2}=\frac{\sum_j (y_i-\bar y)w_{i,j}(y_j-\bar y)}{\sum_i(y_i-\bar y)^2}$$
+</div>
+
+### Getis & Ord's $G_i$
+
+<div>
+$$G_i(d)=\frac{\sum_j w_{i,j} (d) y_j - W_i \bar y(i)}{s(i)\{[(n-1) S_{1i} - W_i^2]/(n-2)\}^{(1/2)}},j \neq i$$
+</div>
+
+--- 
+
+![Moran](/home/choct155/dissertation/TEL/ipynb/moranIPlot.png)
+
+---
+
+![Getis and Ord](/home/choct155/dissertation/TEL/ipynb/goGPlot.png)
+
+---
+
+## Clustering Dynamic Evolves Over Time
+
+![Cluster Kernel G_i](/home/choct155/dissertation/TEL/ipynb/cluster_var_by_w_kern_g.png)
+
++ Variation is substantially higher in $G_i$, which indicates relative consistency in clustering activity, with larger variation in the magnitude of clustering values. This could mean simultaneous revenue capacity transitions occur in multiple counties within given neighborhoods.
+
+---
+
+## Additional Clustering Observations
+
++ Variation is generally more substantial in the higher values for both statistics. For Moran's $I_i$, this indicates varying intensity of spatial association amongst similar values. For $G_i$ this indicates low revenue capacity counties are more tightly coupled than high revenue capacity counties.
+
+
+
++ Central tendency generally leans right of zero for $I_i$, while leaning left of zero for $G_i$ This suggests a tendency towards the existence of spatial clustering, but this clustering occurs more often among low revenue capacity jurisdictions.
+
+---
+
+## Econometric Exploration
+
+__Ordinary Least Squares__  - OLS will serve as a non-spatial pooled estimate
+
+   $$y=X\beta+\epsilon$$
+
+**Spatial Error Model** - Error term in this model seeks to mitigate spatial dependency across counties
+
+   $$y=\gamma Wy + X\beta-\gamma WX\beta + \epsilon$$
+
+**Spatial Lag Model** - Model explicitly incorporates the weighted average of neighborhood values
+
+   <div>
+   $$y = \rho Wy + X\beta + \epsilon$$
+   </div>
+
+**Fixed Effect Spatial Lag Model** - Model both incorporates the weighted average of neighborhood values and the value of the observation in the preceding time period
+
+   $$y=\lambda (I_T \otimes W_N)y + (\iota_T \otimes I_N)\mu + X\beta + \epsilon$$ 
+   
+
+---
+
+## What Are We Modeling?
+
+At this stage, the skeletal specification being assessed is, in general, the following:
+
+$y = f($TEL Intensity, Relative Per Capita Industrial Output, Gross State Product$)$
+
+For most of the models, $y$ is Per Capita Revenue, but the clustering values calculated from the 10 combinations of 5 weight matrices and the two LISAs ($G_i$ and $I_i$) are modeled when weight matrices do not enter the right side of the equation.
+
+TEL intensity is (somewhat clumsily) modeled as an ordinal score, with each TEL policy adding to said score.
+
+In general, the variation explained was fairly limited, but TEL intensity rejected the null consistently at a high level of confidence.
+
+---
+
+## Highlights
+
+1. When estimating the impact of TEL intensity on clustering values, clear effects ($p$ < .05) were only seen with $G_i$ dependents.  The effects were in the ballpark of a -0.1$\sigma$.
+
+2. The negative impact of of TEL intensity on per capita revenue grew by approximately 25% when spatial impacts were introduced, and fell by an order of magnitude when temporal effects were subsequently added (~ -.3$\sigma$ to -.03$\sigma$).
+
+3. The impact of TEL intensity (in repeated cross-sections) grew more negative with time.  This effect was consistent both across weight matrix choice in both SEM and SLM, as well as the number of lags modeled in SLM.
+
+---
+
+![TEL Impact on Per Capita Revenue](/home/choct155/dissertation/TEL/ipynb/TEL_pcrev_impact_scaled.png)
+
+---
+
+## UPDATE:
+
+Initial TEL Intensity Score masks cross-sectional variation stemming from economic differences between counties.  The new intensity measure has two components:
+
+1. TEL constraint is modeled as the lesser between the TABOR and Statewide Property Tax Revenue limits
+
+2. Gallagher Amendment is modeled as the ratio between two broad classes of property: residential/non-residential
+
+The latter enters the model directly, but the former is used to model capacity that remains unaccessible due to the constraints.  Both *flow* and *stock* measures were generated.
+
+$y = f($TEL Intensity, Property Classification Ratio, Demand for Housing, Demand for Residence$)$
+
+---
+
+
+![TEL Intensity Impact](/home/choct155/dissertation/TEL/ipynb/ABFM_deck/ols_cap_est_scale.png)
+
+---
+
+## Next Steps
+
+1. Compare "revenue" capacity dynamic to economic capacity dynamic to parse out source endowments from the output of public choice.
+
+2. A limitation of the approaches used here is the modeling of all counties en masse.  In reality, the socioeconomic starting conditions of each differ, and it is possible to parse out regimes for parameter estimation.  Regime in this case would be defined by revenue capacity quintile.
+
+3. Taking this one step further, it seems reasonable to suspect that TELs play a role in the probability of transitioning from one regime to next.  Spatially aware Markov chain methods are available to test this hypothesis.
+
+4. While it is plausible that revenue composition converges with TEL intensity, the multivariate nature of revenue portfolios complicates direct comparison.  Principal component analysis or the author's preliminary thoughts on $f($Kendall's $\tau$, Euclidean Distance$)$ may serve to reduce dimesionality enough for systematic comparison.
+
+Pick me apart (but you have to tell me about it): [https://github.com/choct155/TEL/blob/master/ipynb/ABFM_TEL_Script.html](https://github.com/choct155/TEL/blob/master/ipynb/ABFM_TEL_Script.html) 
+
+
+```{r setup, message = F, echo = F, cache=F}
+require(rCharts)
+knitr::opts_chunk$set(comment = NA, results = 'asis', tidy = F, message = T)
+```
+
+---
+
+# APPENDIX
+
+---
+
+## TEL Intensity vs. State Unemployment Rate
+
+```{r test2, echo=F}
+slm<-read.csv('/home/choct155/Google Drive/Dissertation/Data/tcr_slm_results.csv')
+require(rCharts)
+slm_intensity <- subset(as.data.frame(slm), var == "intensity_stock")
+n1 <- nPlot(est ~ st_unempr, 
+  group = 'model',
+  data = slm_intensity,
+  type = 'scatterChart',
+  color='pval'
+)
+n1$print("chart3")
+```
+
+---
+
+## TEL Intensity Impact by Year
+
+```{r ichart, echo=F}
+slm_intensity <- subset(as.data.frame(slm), var == "intensity_stock")
+n2 <- nPlot(est ~ year,
+  group = 'model',
+  data = slm_intensity,
+  type = 'multiBarChart',
+  title
+)
+n2$set(title='TEL Intensity Estimates Over Time')
+n2$print('Chart4')
+```
+

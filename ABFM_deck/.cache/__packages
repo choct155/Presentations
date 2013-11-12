@@ -1,0 +1,15 @@
+base
+devtools
+foreign
+ggmap
+ggplot2
+gpclib
+lattice
+maptools
+raster
+rCharts
+RColorBrewer
+rgdal
+slidify
+slidifyLibraries
+sp
