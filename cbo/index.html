@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Intergovernmental Linkages</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Intergovernmental Linkages">
+  <meta name="author" content="Marvin Ward Jr.">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/nvd3/css/nv.d3.css"></link>
+<link rel=stylesheet href="libraries/widgets/nvd3/css/rNVD3.css"></link>
+<link rel=stylesheet href="libraries/widgets/morris/css/morris.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  <script src="libraries/widgets/highcharts/js/jquery-1.9.1.min.js"></script>
+<script src="libraries/widgets/highcharts/js/highcharts.js"></script>
+<script src="libraries/widgets/highcharts/js/highcharts-more.js"></script>
+<script src="libraries/widgets/highcharts/js/exporting.js"></script>
+<script src="libraries/widgets/nvd3/js/jquery-1.8.2.min.js"></script>
+<script src="libraries/widgets/nvd3/js/d3.v3.min.js"></script>
+<script src="libraries/widgets/nvd3/js/nv.d3.min-new.js"></script>
+<script src="libraries/widgets/nvd3/js/fisheye.js"></script>
+<script src="libraries/widgets/morris/js/raphael-2.1.0.min.js"></script>
+<script src="libraries/widgets/morris/js/morris.min.js"></script>
+
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Intergovernmental Linkages</h1>
+    <h2>Exploration of Tax and Expenditure Limitations in Colorado</h2>
+    <p>Marvin Ward Jr.<br/>Fiscal Analyst, DC Office of Revenue Analysis</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Plan of Attack</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Research Motivation</li>
+<li>Operating Context</li>
+<li>TELs in Colorado
+
+<ul>
+<li>Why study the local impact of TELs?</li>
+<li>Does TABOR capture TEL structure in Colorado?</li>
+<li>How can we explore spatial clustering?</li>
+<li>How can we explore the impact of TEL intensity?</li>
+<li>What have we learned?</li>
+</ul></li>
+<li>Chasing Voter Preferences</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Intergovernmental Linkages Seems a Little Wide Open</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>There are ~90,150 jurisdictions in the US (<a href="http://www2.census.gov/govs/cog/g12_org.pdf">Census, 2012</a>)</li>
+<li>Unintended consequences are more likely than not</li>
+<li>Research Goals:
+
+<ul>
+<li>Explore the fundamental hierarchy that governs the system</li>
+<li>Explore the implications of spatial variation and dependency</li>
+<li>Pay homage (hat tip to Daniel Mullins)</li>
+</ul></li>
+<li>Spanish:English -&gt; Spatial:Temporal</li>
+<li>This study is about state policy applied to local governments</li>
+<li>(Reasonably) Exogenous shift for counties of varying circumstance</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Leveraging a Captive Audience</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Research activity = $f$(Own Interest, Academic/Professional Circumstance)</li>
+<li>Research inertia is real, but conduct of inquiry is general</li>
+<li>Utility role in ORA</li>
+<li>Open-Source Ecosystem</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>General Mechanism</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>TELs impose artificial barriers in the fiscal matching process</li>
+<li>Revenue growth that lags expenditure need decreases the achievable investment in human and physical capital</li>
+<li>Lower capital investment diminishes the attractiveness of a jurisdiction for businesses and, in turn, residents</li>
+</ol>
+
+<p>To the extent that recessions facilitate &#39;ratcheting&#39;, the dynamic impact of recessionary years in non-trivial.  </p>
+
+<p>Can TELs impact broad trends in fiscal and economic capacity?</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>TEL Literature Landscape</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Most of the empirical work attempts to study TELs across states, and as such, focuses on statewide definitions of TELs. Obviously this covers up local variation, but perhaps more interestingly, this choice in geographic scope encourages certain types of questions. </p>
+
+<ul>
+<li>What is the impact of TELs on revenue volatility (<a href="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2151690">St. Clair 2012</a>)? </li>
+<li>Do TELs constrain property taxes (<a href="http://www.sciencedirect.com/science/article/pii/S0047272797000479">Dye &amp; McGuire 1997</a>)? </li>
+<li>Do TELs constrain growth in employment and wages (<a href="http://www.jstor.org/discover/10.2307/2117953?uid=3739256&amp;uid=2&amp;uid=4&amp;sid=21102688756161">Poterba &amp; Rueben 1995</a>)?</li>
+<li>Does the impact of TELs on property revenue change during recessions (Mullins &amp; Mikesell 2013)?</li>
+</ul>
+
+<p>Evaluating the impact of TELs with a local lens begs the question, <em>are some jurisdictions affected differently than others</em>? While St. Clair did utilize local government data, the purpose was to show a general effect.  <a href="http://onlinelibrary.wiley.com/doi/10.1111/j.0275-1100.2004.00350.x/abstract?deniedAccessCustomisedMessage=&amp;userIsAuthenticated=false">Mullins (2004)</a>, by contrast, is an important example of evaluating the <em>differential</em> impact of TELs as a function of socioeconomic starting conditions.</p>
+
+<p>This study seeks to extend this approach by incorporating spatial and temporal dependency.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Why Colorado?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Variation, variation, variation
+
+<ul>
+<li>Widely regarded as having one of the most restrictive TEL regimes in the country</li>
+<li>Policy overlap is a significant feature</li>
+<li>&quot;De-Brucing&quot; is a double edged sword</li>
+</ul></li>
+</ul>
+
+<div style='text-align: center;'>
+  <img width='900' src='/home/choct155/dissertation/Presentations/cbo/CO_quick_Census.png' />
+</div>
+
+<hr>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>TABOR <em>And Company</em></h2>
+  </hgroup>
+  <article data-timings="">
+    <p>While the Taxpayer&#39;s Bill of Rights (TABOR) gets the lion&#39;s share of attention in Colorado, it is but one component of a set of four overlapping policies.  In order of enactment:</p>
+
+<ol>
+<li><strong>General Statewide Limit on Property Tax Revenue (SLPTR):</strong>  Local property tax revenues may not increase by more than 5.5% in a given year (the limit was 7% before 1988)</li>
+<li><strong>Gallagher Amendment (GA):</strong> Assessment rates for residential property are set statewide, calculated to keep historical ratios of residential and non-residential property tax revenue consistent (with some minor space for modification)</li>
+<li><strong>Taxpayer Bill of Rights (TABOR):</strong> Limits annual growth in revenues to inflation plus a measure of growth (new construction for local governments and enrollment for school districts)</li>
+<li><strong>Amendment 23 (A23):</strong> Mandates minimum increases in school funding and removes a portion of revenue from the TABOR base</li>
+</ol>
+
+<p>Yes, the interactions create modeling difficulties, but they also happen to provide <em>temporal variation</em> in the restrictiveness of the TEL structure.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>And De-Brucing is ...?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Local governments reserve the right to waive the requirements of both TABOR and the SLPTR.  Over the 1993-2011 period, 48 counties chose to exempt themselves from one or both restrictions.  This has provided <em>cross-sectional variation</em> ... and methodological complexity. </p>
+
+<p><img src="/home/choct155/dissertation/Presentations/cbo/TEL_intensity_2009.png" alt="TEL Intensity"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Don&#39;t Empirical Inquiries Have Tests?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Spatial Dependency (H1): TELs increase clustering in fiscal and economic activity</li>
+<li>Revenue Generation (H2): TELs depress revenue yield</li>
+<li>Revenue Capacity (H3):  TELs depress economic output (exploratory)</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>How Do We Account for Variation in Impact?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The preliminary ordinal measure implicitly assumed equivalency in impact across all counties, and varied too little over time.  In so doing it diminished the value add of this approach.  An ideal intensity score would capture three characteristics of any given county at time $t$:</p>
+
+<ol>
+<li>The cumulative impact of statewide legislation over time;</li>
+<li>The proliferation of locally derived exemptions from TABOR and SLPTR; and,</li>
+<li>The local economic dynamics that may trigger a breach in the ceilings imposed by the aforementioned legislation.</li>
+</ol>
+
+<p>This requires abstraction to modeling the implications of policy rather than the policy itself.  An estimate of the gap between revenue potential and the revenue yield permitted by the policies acting on county $i$ at time $t$ satisfies these requirements with a <em>continuous</em> measure.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Empirical Justification for the Measure</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+  <img height='300' src='/home/choct155/dissertation/Presentations/cbo/TABOR_less_SLPTR_dist.png' />
+</div>
+
+<div style='text-align: center;'>
+  <img height='300' src='/home/choct155/dissertation/Presentations/cbo/TABOR_vs_SLPTR.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Modeling the Gallagher Amendment</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Insofar as it is a limit based upon statewide characteristics, the Gallagher Amendment is a different animal altogether.  It is modeled as a separate variable.</p>
+
+<div style='text-align: center;'>
+  <img width='900' src='/home/choct155/dissertation/Presentations/cbo/gallagher_dist.png' />
+</div>
+
+<p>To the extent that the residential share in a given county is higher than the statewide average, that county is constrained below its property tax revenue potential.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Spatial Considerations</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Industrial bases and socioeconomic conditions do not abruptly shift out of respect for the county border.  Counties can and do share similarities with their neighbors.  Spatial autocorrelation is real.  Enter Local Indicators of Spatial Association (LISAs; <a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1538-4632.1995.tb00338.x/abstract">Anselin 1995</a>):</p>
+
+<h4>Local Moran&#39;s $I_i$</h4>
+
+<div>
+$$I_i=\frac{\sum_j z_i w_{i,j} z_j}{\sum_i z_i^2}=\frac{\sum_j (y_i-\bar y)w_{i,j}(y_j-\bar y)}{\sum_i(y_i-\bar y)^2}$$
+</div>
+
+<h4>Getis &amp; Ord&#39;s $G_i$</h4>
+
+<div>
+$$G_i(d)=\frac{\sum_j w_{i,j} (d) y_j - W_i \bar y(i)}{s(i)\{[(n-1) S_{1i} - W_i^2]/(n-2)\}^{(1/2)}},j \neq i$$
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Spatial Autocorrelation vs Temporal Autocorrelation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Temporal autocorrelation is often spoken of in terms of process memory.  The observation in time $t$ will exhibit a given relationship with the observation in time $t-1$ because the DGP carries the latent effect of that previous observation.  It &quot;remembers&quot; the last value or values, and behaves in a manner consistent with that knowledge.  </p>
+
+<div style='text-align: center;'>
+  <img width='500' src='/home/choct155/dissertation/Presentations/cbo/space_time_memory.png' />
+</div>
+
+<p>Spatial autocorrelation, insofar as it incorporates information about observations in the local neighborhood, is basically doing the same thing.  The difference is that temporal autocorrelation reflects uni-directional memory, while spatial autocorrelation reflects multi-dimensional memory.  </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Unpacking Measures of Spatial Autocorrelation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Local Moran&#39;s I and Getis &amp; Ord&#39;s G* are complementary measures, insofar as they measure two different types of clustering.  Local Moran&#39;s I highlights pockets of similarity and disimilarity while Getis &amp; Ord&#39;s G* highlight pockets of high and low values.</p>
+
+<div style='text-align: center;'>
+  <img height='230' src='/home/choct155/dissertation/Presentations/cbo/Moran_colors.png' />
+</div>
+
+<div style='text-align: center;'>
+  <img height='230' src='/home/choct155/dissertation/Presentations/cbo/GO_colors.png' />
+</div>
+
+<hr>
+
+<h2>What is the Local Neighborhood?</h2>
+
+<p>Defining the local neighborhood is somewhat analagous to defining the memory structure in an autoregressive process.</p>
+
+<blockquote>
+<p>&quot;[W]hile there have been significant advances in the spatial econometrics literature in the last 20 years, the key issue involved from the very start (the specification of the W-matrix and the form of spatial spillovers more generally) remains largely unsolved.&quot; (<a href="http://www.ub.edu/sea2009.com/Papers/100.pdf">Harris &amp; Kravtsova 2009</a>)</p>
+
+<p>&quot;...what is the theoretical and empirical basis of assumptions about the spatial reach of externalities, and how can this be enhanced?&quot; (<a href="http://irx.sagepub.com/content/26/2/197.abstract">Fingleton 2003</a>)</p>
+</blockquote>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Practical Choices</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>There are a number of simple definitions utilized by practitioners.  In the evaluation of the LISAs, I used two broad classes:</p>
+
+<ol>
+<li>Contiguity-Based (Rook, Queen)</li>
+<li>Distance-Based (Binary, Linear, Kernel)</li>
+</ol>
+
+<div style='text-align: center;'>
+  <img height='200' src='/home/choct155/dissertation/Presentations/cbo/w_def.png' />
+</div>
+
+<div style='text-align: center;'>
+  <img height='200' src='/home/choct155/dissertation/Presentations/cbo/decay_curves.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  <article data-timings="">
+    <p><img src="/home/choct155/dissertation/Presentations/cbo/moranIPlot.png" alt="Moran"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-18" style="background:;">
+  <article data-timings="">
+    <p><img src="/home/choct155/dissertation/Presentations/cbo/goGPlot.png" alt="Getis and Ord"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  <article data-timings="">
+    <div style='text-align: center;'>
+  <img height='600' src='/home/choct155/dissertation/Presentations/cbo/LISA_density.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Diving Deeper into LISAs</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Variation is substantially higher in Getis &amp; Ord&#39;s G* than in Local Moran&#39;s I.  This suggests that clustering is relatively persistent, with larger variation in the magnitude of the clustered values.</li>
+<li>Variation is higher as magnitude increases for both statistics.  For Local Moran&#39;s I, the variation we do see occurs most often amongst similar values.  For Getis &amp; Ord&#39;s G*, this indicates that low revenue counties are more tightly coupled than high revenue counties.</li>
+<li>Central tendency generally leans right of zero for Local Moran&#39;s I and left for Getis &amp; Ord&#39;s G*.  This reinforces the idea that clustering tends to be present and stronger amongst low revenue counties.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>Estimation of TEL impact</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>We will view two separate specifications.  The first specification comes from some of the work in the paper, while the second reflects a more panel-centric update.</p>
+
+<h3>Specification 1 (Used in pooled OLS and repeated cross-sections)</h3>
+
+<p><code>pcrev/pcap/LISA</code> = $f$(<code>gsp,lpop_growth,st_unempr,permit_rate,vac_rate,prop_ratio,intensity_stock</code>)</p>
+
+<h3>Specification 2 (Used in spatial panels)</h3>
+
+<p><code>log(pcrev/pcap)</code> = $f$(<code>pop,unemp_rate,vac_rate,rel_prop_ratio,intensity_stock,[as.factor(pcap_q)]</code>)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    <h2>Econometric Exploration</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>$\bf{\text{Ordinary Least Squares}}$ - OLS will serve as a non-spatial pooled estimate</p>
+
+<p>$$y=X\beta+\epsilon$$</p>
+
+<p>$\bf{\text{Spatial Error Model}}$ - Error term in this model seeks to mitigate spatial dependency across counties</p>
+
+<p>$$y=X\beta-\gamma W(y-X\beta) + \epsilon$$</p>
+
+<p>$\bf{\text{Spatial Lag Model}}$ - Model explicitly incorporates the weighted average of neighborhood values</p>
+
+<p><div>
+   $$y = \rho Wy + X\beta + \epsilon$$
+   </div></p>
+
+<p>$\bf{\text{Spatial Panel Models}}$ - A variety of models incorporate both the weighted average of neighborhood values and fixed/random effects (fixed effect estimator shown here)</p>
+
+<p><div>
+   $$y=\lambda (I_T \otimes W_N)y + (\iota_T \otimes I_N)\mu + X\beta + \epsilon$$ 
+  </div> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h2>Pooled OLS</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Serves as a baseline against which spatial models may be compared.  Surprisingly, despite serious misspecification problems, it tells a TEL story that finds corroboration in other models.</p>
+
+<div style='text-align: center;'>
+  <img width='1000' src='/home/choct155/dissertation/Presentations/cbo/converge_pooled_ols.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-24" style="background:;">
+  <hgroup>
+    <h2>LISA Models</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>These were intended to test the spatial dependence hypothesis directly. </p>
+
+<div style='text-align: center;'>
+  <img width='1000' src='/home/choct155/dissertation/Presentations/cbo/converge_LISAs.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-25" style="background:;">
+  <hgroup>
+    <h2>Repeated Cross-Section (2SLS) - Revenue Yield</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+  <img height='600' src='/home/choct155/dissertation/Presentations/cbo/converge_slm_rev.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-26" style="background:;">
+  <hgroup>
+    <h2>Repeated Cross-Section (2SLS) - Revenue Capacity</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+  <img height='600' src='/home/choct155/dissertation/Presentations/cbo/converge_slm_econ.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-27" style="background:;">
+  <hgroup>
+    <h2>Spatial Panel (ML) - Revenue Yield</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Results Summary</h3>
+
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> SEM </TH> <TH> SEM_p </TH> <TH> FE </TH> <TH> FE_p </TH> <TH> FESL </TH> <TH> FESL_p </TH>  </TR>
+  <TR> <TD align="right"> intensity_stock </TD> <TD align="right"> -0.44 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> -0.14 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.05 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> rel_prop_rat </TD> <TD align="right"> -0.10 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.03 </TD> <TD align="right"> 0.02 </TD> <TD align="right"> -0.06 </TD> <TD align="right"> 0.01 </TD> </TR>
+  <TR> <TD align="right"> as.factor(pcap_q)1 </TD> <TD align="right"> -0.15 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.12 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.02 </TD> <TD align="right"> 0.06 </TD> </TR>
+  <TR> <TD align="right"> as.factor(pcap_q)2 </TD> <TD align="right"> -0.09 </TD> <TD align="right"> 0.02 </TD> <TD align="right"> 0.19 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.08 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> as.factor(pcap_q)3 </TD> <TD align="right"> 0.27 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.32 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.12 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> as.factor(pcap_q)4 </TD> <TD align="right"> -0.02 </TD> <TD align="right"> 0.01 </TD> <TD align="right"> -0.01 </TD> <TD align="right"> 0.02 </TD> <TD align="right"> 0.27 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> unemp_rate </TD> <TD align="right"> 0.02 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> -0.00 </TD> <TD align="right"> 0.15 </TD> <TD align="right"> -0.00 </TD> <TD align="right"> 0.88 </TD> </TR>
+  <TR> <TD align="right"> vac_rate </TD> <TD align="right"> -0.00 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> -0.00 </TD> <TD align="right"> 0.10 </TD> <TD align="right"> -0.00 </TD> <TD align="right"> 0.43 </TD> </TR>
+  <TR> <TD align="right"> pop </TD> <TD align="right"> 6.80 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.56 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> -0.00 </TD> <TD align="right"> 0.01 </TD> </TR>
+   </TABLE>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-28" style="background:;">
+  <hgroup>
+    <h2>Spatial Panel (ML) - Revenue Capacity</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Results Summary</h3>
+
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> SEM </TH> <TH> SEM_p </TH> <TH> RE </TH> <TH> RE_p </TH> <TH> RESL </TH> <TH> RESL_p </TH> <TH> RESCE </TH> <TH> RESCE_p </TH>  </TR>
+  <TR> <TD align="right"> (Intercept) </TD> <TD align="right"> 9.58 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 9.46 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 3.02 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 6.77 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> intensity_stock </TD> <TD align="right"> 0.18 </TD> <TD align="right"> 0.01 </TD> <TD align="right"> 0.04 </TD> <TD align="right"> 0.19 </TD> <TD align="right"> 0.12 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.11 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> rel_prop_rat </TD> <TD align="right"> 0.22 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> -0.06 </TD> <TD align="right"> 0.27 </TD> <TD align="right"> 0.02 </TD> <TD align="right"> 0.70 </TD> <TD align="right"> -0.08 </TD> <TD align="right"> 0.17 </TD> </TR>
+  <TR> <TD align="right"> unemp_rate </TD> <TD align="right"> -0.11 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> -0.06 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> -0.02 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> -0.01 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> vac_rate </TD> <TD align="right"> -0.00 </TD> <TD align="right"> 0.27 </TD> <TD align="right"> -0.00 </TD> <TD align="right"> 0.02 </TD> <TD align="right"> -0.00 </TD> <TD align="right"> 0.47 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.09 </TD> </TR>
+  <TR> <TD align="right"> pop </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.47 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.00 </TD> </TR>
+   </TABLE>
+   
+
+<hr>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-29" style="background:;">
+  <hgroup>
+    <h2>Chasing Voter Preferences</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>In controlling for the counter case, I have employed three techniques:
+
+<ul>
+<li>This paper sought to identify the deflections in trajectories</li>
+<li>In exploring expenditure wedges, I employed unsupervised learning to typify counties
+<div style='text-align: center;'>
+<img height='180' src='/home/choct155/dissertation/Presentations/cbo/k_means.png' />
+</div></li>
+<li>In controlling for the propensity for exemption, I am employ lasso regression to aid in the development of spatio-temporal instruments
+<div style='text-align: center;'>
+<img height='180' src='/home/choct155/dissertation/Presentations/cbo/lasso_cv.png' />
+<img height='180' src='/home/choct155/dissertation/Presentations/cbo/lasso_var_select.png' />
+</div></li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-30" style="background:;">
+  <hgroup>
+    <h2>Thank You For Your Attention</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>What kind of reproducible research advocate would I be if I didn&#39;t share this presentation?  I will be posting it on my Github page within a few days.</h3>
+
+<h2><a href="https://github.com/choct155">https://github.com/choct155</a></h2>
+
+<h3>Comments are more than welcome, they are encouraged.</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-31" style="background:;">
+  <hgroup>
+    <h2>Spatial Panel (ML) - Revenue Yield</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3><a href="http://www.inside-r.org/packages/cran/splm/docs/spml">Spatial Error Model</a></h3>
+
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> Estimate </TH> <TH> Std. Error </TH> <TH> t-value </TH> <TH> Pr(&gt;|t|) </TH>  </TR>
+  <TR> <TD align="right"> (Intercept) </TD> <TD align="right"> 6.80 </TD> <TD align="right"> 0.05 </TD> <TD align="right"> 137.25 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> intensity_stock </TD> <TD align="right"> -0.19 </TD> <TD align="right"> 0.04 </TD> <TD align="right"> -4.97 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> rel_prop_rat </TD> <TD align="right"> -0.44 </TD> <TD align="right"> 0.03 </TD> <TD align="right"> -15.49 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> as.factor(pcap_q)1 </TD> <TD align="right"> -0.10 </TD> <TD align="right"> 0.03 </TD> <TD align="right"> -2.90 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> as.factor(pcap_q)2 </TD> <TD align="right"> -0.15 </TD> <TD align="right"> 0.03 </TD> <TD align="right"> -4.34 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> as.factor(pcap_q)3 </TD> <TD align="right"> -0.09 </TD> <TD align="right"> 0.04 </TD> <TD align="right"> -2.43 </TD> <TD align="right"> 0.02 </TD> </TR>
+  <TR> <TD align="right"> as.factor(pcap_q)4 </TD> <TD align="right"> 0.27 </TD> <TD align="right"> 0.04 </TD> <TD align="right"> 6.78 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> unemp_rate </TD> <TD align="right"> -0.02 </TD> <TD align="right"> 0.01 </TD> <TD align="right"> -2.78 </TD> <TD align="right"> 0.01 </TD> </TR>
+  <TR> <TD align="right"> vac_rate </TD> <TD align="right"> 0.02 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 24.22 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> pop </TD> <TD align="right"> -0.00 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> -7.27 </TD> <TD align="right"> 0.00 </TD> </TR>
+   </TABLE>
+   
+
+<hr>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-32" style="background:;">
+  <hgroup>
+    <h2>Spatial Panel (ML) - Revenue Capacity</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3><a href="http://www.inside-r.org/packages/cran/splm/docs/spml">Spatial Error Model</a></h3>
+
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> Estimate </TH> <TH> Std. Error </TH> <TH> t-value </TH> <TH> Pr(&gt;|t|) </TH>  </TR>
+  <TR> <TD align="right"> (Intercept) </TD> <TD align="right"> 9.58 </TD> <TD align="right"> 0.06 </TD> <TD align="right"> 150.21 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> intensity_stock </TD> <TD align="right"> 0.18 </TD> <TD align="right"> 0.06 </TD> <TD align="right"> 2.73 </TD> <TD align="right"> 0.01 </TD> </TR>
+  <TR> <TD align="right"> rel_prop_rat </TD> <TD align="right"> 0.22 </TD> <TD align="right"> 0.05 </TD> <TD align="right"> 4.62 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> unemp_rate </TD> <TD align="right"> -0.11 </TD> <TD align="right"> 0.01 </TD> <TD align="right"> -11.36 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> vac_rate </TD> <TD align="right"> -0.00 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> -1.10 </TD> <TD align="right"> 0.27 </TD> </TR>
+  <TR> <TD align="right"> pop </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 11.87 </TD> <TD align="right"> 0.00 </TD> </TR>
+   </TABLE>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-33" style="background:;">
+  <hgroup>
+    <h2>Spatial Panel (ML) - Revenue Yield</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3><a href="http://www.inside-r.org/packages/cran/splm/docs/spml">Fixed Effects with Spatial Lag and Errors</a></h3>
+
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> Estimate </TH> <TH> Std. Error </TH> <TH> t-value </TH> <TH> Pr(&gt;|t|) </TH>  </TR>
+  <TR> <TD align="right"> lambda </TD> <TD align="right"> 0.74 </TD> <TD align="right"> 0.05 </TD> <TD align="right"> 16.32 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> rho </TD> <TD align="right"> -0.66 </TD> <TD align="right"> 0.11 </TD> <TD align="right"> -5.95 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> intensity_stock </TD> <TD align="right"> 0.05 </TD> <TD align="right"> 0.01 </TD> <TD align="right"> 3.95 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> rel_prop_rat </TD> <TD align="right"> -0.06 </TD> <TD align="right"> 0.02 </TD> <TD align="right"> -2.76 </TD> <TD align="right"> 0.01 </TD> </TR>
+  <TR> <TD align="right"> as.factor(pcap_q)1 </TD> <TD align="right"> 0.02 </TD> <TD align="right"> 0.01 </TD> <TD align="right"> 1.91 </TD> <TD align="right"> 0.06 </TD> </TR>
+  <TR> <TD align="right"> as.factor(pcap_q)2 </TD> <TD align="right"> 0.08 </TD> <TD align="right"> 0.02 </TD> <TD align="right"> 4.89 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> as.factor(pcap_q)3 </TD> <TD align="right"> 0.12 </TD> <TD align="right"> 0.02 </TD> <TD align="right"> 6.56 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> as.factor(pcap_q)4 </TD> <TD align="right"> 0.27 </TD> <TD align="right"> 0.03 </TD> <TD align="right"> 10.94 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> unemp_rate </TD> <TD align="right"> -0.00 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> -0.16 </TD> <TD align="right"> 0.88 </TD> </TR>
+  <TR> <TD align="right"> vac_rate </TD> <TD align="right"> -0.00 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> -0.79 </TD> <TD align="right"> 0.43 </TD> </TR>
+  <TR> <TD align="right"> pop </TD> <TD align="right"> -0.00 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> -2.62 </TD> <TD align="right"> 0.01 </TD> </TR>
+   </TABLE>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-34" style="background:;">
+  <hgroup>
+    <h2>Spatial Panel (ML) - Revenue Capacity</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3><a href="http://www.inside-r.org/packages/cran/splm/docs/spml">Random Effects with Spatial Lag and Errors</a></h3>
+
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> Estimate </TH> <TH> Std. Error </TH> <TH> t-value </TH> <TH> Pr(&gt;|t|) </TH>  </TR>
+  <TR> <TD align="right"> (Intercept) </TD> <TD align="right"> 3.02 </TD> <TD align="right"> 0.08 </TD> <TD align="right"> 36.61 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> intensity_stock </TD> <TD align="right"> 0.12 </TD> <TD align="right"> 0.02 </TD> <TD align="right"> 5.43 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> rel_prop_rat </TD> <TD align="right"> 0.02 </TD> <TD align="right"> 0.04 </TD> <TD align="right"> 0.38 </TD> <TD align="right"> 0.70 </TD> </TR>
+  <TR> <TD align="right"> unemp_rate </TD> <TD align="right"> -0.02 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> -5.80 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> vac_rate </TD> <TD align="right"> -0.00 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> -0.72 </TD> <TD align="right"> 0.47 </TD> </TR>
+  <TR> <TD align="right"> pop </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 3.97 </TD> <TD align="right"> 0.00 </TD> </TR>
+   </TABLE>
+   
+
+<hr>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-35" style="background:;">
+  <hgroup>
+    <h2>Spatial Panel (ML) - Revenue Capacity</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3><a href="http://www.inside-r.org/packages/cran/splm/docs/spreml">Random Effects with Spatial Lag and Serially Correlated Errors</a></h3>
+
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> Estimate </TH> <TH> Std. Error </TH> <TH> t-value </TH> <TH> Pr(&gt;|t|) </TH>  </TR>
+  <TR> <TD align="right"> (Intercept) </TD> <TD align="right"> 6.77 </TD> <TD align="right"> 0.09 </TD> <TD align="right"> 73.83 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> intensity_stock </TD> <TD align="right"> 0.11 </TD> <TD align="right"> 0.04 </TD> <TD align="right"> 3.09 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> rel_prop_rat </TD> <TD align="right"> -0.08 </TD> <TD align="right"> 0.05 </TD> <TD align="right"> -1.38 </TD> <TD align="right"> 0.17 </TD> </TR>
+  <TR> <TD align="right"> unemp_rate </TD> <TD align="right"> -0.01 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> -4.88 </TD> <TD align="right"> 0.00 </TD> </TR>
+  <TR> <TD align="right"> vac_rate </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 1.67 </TD> <TD align="right"> 0.09 </TD> </TR>
+  <TR> <TD align="right"> pop </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 0.00 </TD> <TD align="right"> 4.03 </TD> <TD align="right"> 0.00 </TD> </TR>
+   </TABLE>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Plan of Attack'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Intergovernmental Linkages Seems a Little Wide Open'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Leveraging a Captive Audience'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='General Mechanism'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='TEL Literature Landscape'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Why Colorado?'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='TABOR <em>And Company</em>'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='And De-Brucing is ...?'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Don&#39;t Empirical Inquiries Have Tests?'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='How Do We Account for Variation in Impact?'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Empirical Justification for the Measure'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Modeling the Gallagher Amendment'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Spatial Considerations'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Spatial Autocorrelation vs Temporal Autocorrelation'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Unpacking Measures of Spatial Autocorrelation'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Practical Choices'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title=''>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title=''>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title=''>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Diving Deeper into LISAs'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Estimation of TEL impact'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Econometric Exploration'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Pooled OLS'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='LISA Models'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title='Repeated Cross-Section (2SLS) - Revenue Yield'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=26 title='Repeated Cross-Section (2SLS) - Revenue Capacity'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=27 title='Spatial Panel (ML) - Revenue Yield'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=28 title='Spatial Panel (ML) - Revenue Capacity'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=29 title='Chasing Voter Preferences'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=30 title='Thank You For Your Attention'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=31 title='Spatial Panel (ML) - Revenue Yield'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=32 title='Spatial Panel (ML) - Revenue Capacity'>
+         32
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=33 title='Spatial Panel (ML) - Revenue Yield'>
+         33
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=34 title='Spatial Panel (ML) - Revenue Capacity'>
+         34
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=35 title='Spatial Panel (ML) - Revenue Capacity'>
+         35
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
