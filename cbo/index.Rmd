@@ -85,7 +85,7 @@ This study seeks to extend this approach by incorporating spatial and temporal d
   + "De-Brucing" is a double edged sword
 
 <div style='text-align: center;'>
-  <img width='900' src='/home/choct155/dissertation/Presentations/cbo/CO_quick_Census.png' />
+  <img width='900' src='CO_quick_Census.png' />
 </div>
 ---
 
@@ -110,7 +110,7 @@ Yes, the interactions create modeling difficulties, but they also happen to prov
 
 Local governments reserve the right to waive the requirements of both TABOR and the SLPTR.  Over the 1993-2011 period, 48 counties chose to exempt themselves from one or both restrictions.  This has provided *cross-sectional variation* ... and methodological complexity. 
 
-![TEL Intensity](/home/choct155/dissertation/Presentations/cbo/TEL_intensity_2009.png)
+![TEL Intensity](TEL_intensity_2009.png)
 
 ---
 
@@ -137,11 +137,11 @@ This requires abstraction to modeling the implications of policy rather than the
 ## Empirical Justification for the Measure
 
 <div style='text-align: center;'>
-  <img height='300' src='/home/choct155/dissertation/Presentations/cbo/TABOR_less_SLPTR_dist.png' />
+  <img height='300' src='TABOR_less_SLPTR_dist.png' />
 </div>
 
 <div style='text-align: center;'>
-  <img height='300' src='/home/choct155/dissertation/Presentations/cbo/TABOR_vs_SLPTR.png' />
+  <img height='300' src='TABOR_vs_SLPTR.png' />
 </div>
 
 ---
@@ -151,7 +151,7 @@ This requires abstraction to modeling the implications of policy rather than the
 Insofar as it is a limit based upon statewide characteristics, the Gallagher Amendment is a different animal altogether.  It is modeled as a separate variable.
 
 <div style='text-align: center;'>
-  <img width='900' src='/home/choct155/dissertation/Presentations/cbo/gallagher_dist.png' />
+  <img width='900' src='gallagher_dist.png' />
 </div>
 
 
@@ -182,7 +182,7 @@ $$G_i(d)=\frac{\sum_j w_{i,j} (d) y_j - W_i \bar y(i)}{s(i)\{[(n-1) S_{1i} - W_i
 Temporal autocorrelation is often spoken of in terms of process memory.  The observation in time $t$ will exhibit a given relationship with the observation in time $t-1$ because the DGP carries the latent effect of that previous observation.  It "remembers" the last value or values, and behaves in a manner consistent with that knowledge.  
 
 <div style='text-align: center;'>
-  <img width='500' src='/home/choct155/dissertation/Presentations/cbo/space_time_memory.png' />
+  <img width='500' src='space_time_memory.png' />
 </div>
 
 Spatial autocorrelation, insofar as it incorporates information about observations in the local neighborhood, is basically doing the same thing.  The difference is that temporal autocorrelation reflects uni-directional memory, while spatial autocorrelation reflects multi-dimensional memory.  
@@ -194,10 +194,10 @@ Spatial autocorrelation, insofar as it incorporates information about observatio
 Local Moran's I and Getis & Ord's G* are complementary measures, insofar as they measure two different types of clustering.  Local Moran's I highlights pockets of similarity and disimilarity while Getis & Ord's G* highlight pockets of high and low values.
 
 <div style='text-align: center;'>
-  <img height='230' src='/home/choct155/dissertation/Presentations/cbo/Moran_colors.png' />
+  <img height='230' src='Moran_colors.png' />
 </div>
 <div style='text-align: center;'>
-  <img height='230' src='/home/choct155/dissertation/Presentations/cbo/GO_colors.png' />
+  <img height='230' src='GO_colors.png' />
 </div>
 ---
 
@@ -219,24 +219,24 @@ There are a number of simple definitions utilized by practitioners.  In the eval
 2. Distance-Based (Binary, Linear, Kernel)
 
 <div style='text-align: center;'>
-  <img height='200' src='/home/choct155/dissertation/Presentations/cbo/w_def.png' />
+  <img height='200' src='w_def.png' />
 </div>
 <div style='text-align: center;'>
-  <img height='200' src='/home/choct155/dissertation/Presentations/cbo/decay_curves.png' />
+  <img height='200' src='decay_curves.png' />
 </div>
 
 ---
 
-![Moran](/home/choct155/dissertation/Presentations/cbo/moranIPlot.png)
+![Moran](moranIPlot.png)
 
 ---
 
-![Getis and Ord](/home/choct155/dissertation/Presentations/cbo/goGPlot.png)
+![Getis and Ord](goGPlot.png)
 
 ---
 
 <div style='text-align: center;'>
-  <img height='600' src='/home/choct155/dissertation/Presentations/cbo/LISA_density.png' />
+  <img height='600' src='LISA_density.png' />
 </div>
 
 ---
@@ -293,7 +293,7 @@ $\bf{\text{Spatial Panel Models}}$ - A variety of models incorporate both the we
 Serves as a baseline against which spatial models may be compared.  Surprisingly, despite serious misspecification problems, it tells a TEL story that finds corroboration in other models.
 
 <div style='text-align: center;'>
-  <img width='1000' src='/home/choct155/dissertation/Presentations/cbo/converge_pooled_ols.png' />
+  <img width='1000' src='converge_pooled_ols.png' />
 </div>
 
 ---
@@ -303,7 +303,7 @@ Serves as a baseline against which spatial models may be compared.  Surprisingly
 These were intended to test the spatial dependence hypothesis directly. 
 
 <div style='text-align: center;'>
-  <img width='1000' src='/home/choct155/dissertation/Presentations/cbo/converge_LISAs.png' />
+  <img width='1000' src='converge_LISAs.png' />
 </div>
 
 
@@ -312,7 +312,7 @@ These were intended to test the spatial dependence hypothesis directly.
 ## Repeated Cross-Section (2SLS) - Revenue Yield
 
 <div style='text-align: center;'>
-  <img height='600' src='/home/choct155/dissertation/Presentations/cbo/converge_slm_rev.png' />
+  <img height='600' src='converge_slm_rev.png' />
 </div>
 
 
@@ -321,7 +321,7 @@ These were intended to test the spatial dependence hypothesis directly.
 ## Repeated Cross-Section (2SLS) - Revenue Capacity
 
 <div style='text-align: center;'>
-  <img height='600' src='/home/choct155/dissertation/Presentations/cbo/converge_slm_econ.png' />
+  <img height='600' src='converge_slm_econ.png' />
 </div>
 
 
@@ -373,12 +373,12 @@ These were intended to test the spatial dependence hypothesis directly.
   + This paper sought to identify the deflections in trajectories
   + In exploring expenditure wedges, I employed unsupervised learning to typify counties
 <div style='text-align: center;'>
-  <img height='180' src='/home/choct155/dissertation/Presentations/cbo/k_means.png' />
+  <img height='180' src='k_means.png' />
 </div>
   + In controlling for the propensity for exemption, I am employ lasso regression to aid in the development of spatio-temporal instruments
 <div style='text-align: center;'>
-  <img height='180' src='/home/choct155/dissertation/Presentations/cbo/lasso_cv.png' />
-  <img height='180' src='/home/choct155/dissertation/Presentations/cbo/lasso_var_select.png' />
+  <img height='180' src='lasso_cv.png' />
+  <img height='180' src='lasso_var_select.png' />
 </div>
 
 ---
