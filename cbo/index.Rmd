@@ -10,7 +10,43 @@ widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
 ext_widgets : {rCharts: ["libraries/highcharts", "libraries/nvd3", "libraries/morris"]}
 mode        : selfcontained # {standalone, draft}
 ---
+<style>
+.title-slide{
+  background-image: 'pcrev_map.png';
+}
 
+.title-slide {
+  background-color: #FFFFFF;
+}
+
+.title-slide hgroup > h1{
+ font-family: 'Oswald', 'Helvetica', sanserif;
+}
+
+.title-slide hgroup > h1, 
+.title-slide hgroup > h2 {
+  color: #B40431 ;  
+}
+
+article p, article li, article li.build, section p, section li{
+  font-family: 'Open Sans','Helvetica', 'Crimson Text', 'Garamond',  'Palatino', sans-serif;
+  text-align: justify;
+  font-size:22px;
+  line-height: 1.5em;
+  color: #444444;
+}
+
+slide:not(.segue) h2{
+  font-family: 'Calibri', Arial, sans-serif;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: normal;
+  letter-spacing: -2px;
+  line-height: 1.2em;
+  color: #B40431;
+}
+</style>
 ## Plan of Attack
 
 + Research Motivation
